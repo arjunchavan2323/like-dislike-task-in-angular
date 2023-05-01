@@ -1,0 +1,43 @@
+
+<p>{{title}}</p>
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let reel of reels">
+            <div class="card">
+                <div class="card-header">{{reel.title}}</div>
+                <div class="card-body">
+                    
+                  <app-like [isliked]="reel.islike" (eventemittercustumevent)="oncallbackfunctionbtn($event, reels)"></app-like> <span class="ml-4"> {{reel.likecount}}</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<br><hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5" *ngFor="let you of youtube">
+            <div class="card">
+                <div class="card-header">{{you.description}}</div>
+                <div class="card-body">
+                <app-youtube [isliked]="you.islike" (getemitcustumeven)="btniscallback($event, youtube)"></app-youtube>  <span class="ml-4">{{you.likecount}}</span> 
+                </div>
+                <div class="card-footer">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
